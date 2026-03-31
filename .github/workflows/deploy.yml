@@ -31,11 +31,8 @@ jobs:
     
           - name: 📄 Export notebooks
             run: |
-                # Define the notebooks to export
-                files=("batch_and_form.py" "data_explorer.py" "notebook.py")
-                
                 # Export each notebook to the same output directory
-                for file in "${files[@]}"; do
+                for file in notebooks/*.py; do
                   echo "Exporting $file..."
                   uvx marimo export html-wasm "$file" -o path/to/output --mode edit
                 done
