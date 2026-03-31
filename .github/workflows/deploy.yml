@@ -32,9 +32,11 @@ jobs:
           - name: 📄 Export notebooks
             run: |
                 # Export each notebook to the same output directory
+                mkdir -p path/to/output
                 for file in notebooks/*.py; do
-                  echo "Exporting $file..."
-                  uvx marimo export html-wasm "$file" -o path/to/output --mode edit
+                  basename=$(basename "$file" .py)
+                  echo "Exporting $file to ${basename}.html..."
+                  uvx marimo export html-wasm "$file" -o "path/to/output/${basename}.html" --mode edit
                 done
  
           - name: 📦 Upload Pages Artifact
