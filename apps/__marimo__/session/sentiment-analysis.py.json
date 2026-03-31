@@ -1,0 +1,65 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.21.1",
+    "script_metadata_hash": null
+  },
+  "cells": [
+    {
+      "id": "Hbol",
+      "code_hash": "fe28f64589bd795edb02aafdaa0e8571",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "MJUe",
+      "code_hash": "030a465082d28c6bb7e1602be9ce5f44",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "BMhR",
+      "code_hash": "a297449c3caf7a2c8dc51fd220a2afe3",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"sentiment-analysis\">Sentiment Analysis</h1></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "bkHC",
+      "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "EFiH",
+      "code_hash": null,
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "Ssfh",
+      "code_hash": null,
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "XvFE",
+      "code_hash": null,
+      "outputs": [],
+      "console": []
+    }
+  ]
+}
