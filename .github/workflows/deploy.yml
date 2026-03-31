@@ -33,11 +33,22 @@ jobs:
             run: |
                 # Export each notebook to the same output directory
                 mkdir -p path/to/output
+                      # Create index.html
+                cat > path/to/output/index.html << 'EOF'
+                <!DOCTYPE html>
+                <html>
+                <head><title>My Notebooks</title></head>
+                <body>
+                  <h1>Available Notebooks</h1>
+                  <ul>
+                EOF
                 for file in notebooks/*.py; do
                   basename=$(basename "$file" .py)
                   echo "Exporting $file to ${basename}.html..."
                   uvx marimo export html-wasm "$file" -o "path/to/output/${basename}.html" --mode edit
+                  echo "<li><a href='${basename}.html'>${basename}</a></li>" >> path/to/output/index.html
                 done
+                echo "</ul></body></html>" >> path/to/output/index.html
  
           - name: 📦 Upload Pages Artifact
             uses: actions/upload-pages-artifact@v3
