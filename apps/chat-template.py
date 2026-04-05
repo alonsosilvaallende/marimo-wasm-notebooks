@@ -169,11 +169,11 @@ def _(add_generation_prompt, messages, mo, tokenizer, tools):
             output2 = mo.Html(tokenizer.apply_chat_template(messages,
                                                           add_generation_prompt= add_generation_prompt.value,
                                                           tools=tools,
-                                                          tokenize=False).replace("\n", "<br>").replace("#", "\#").replace("<", "&lt").replace(">", "&gt"))
+                                                          tokenize=False).replace("#", "\#").replace("<", "&lt").replace(">", "&gt").replace("\n", "<br>"))
         else:
             output2 = mo.Html(tokenizer.apply_chat_template(messages,
                                                           add_generation_prompt= add_generation_prompt.value,
-                                                          tokenize=False).replace("\n", "<br>").replace("#", "\#").replace("<", "&lt").replace(">", "&gt"))
+                                                          tokenize=False).replace("#", "\#").replace("<", "&lt").replace(">", "&gt").replace("\n", "<br>"))
     else:
         output2 = ""
     return (output2,)
