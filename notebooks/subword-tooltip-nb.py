@@ -8,7 +8,7 @@ app = marimo.App(width="medium")
 def _():
     import marimo as mo
 
-    mo.md("# `subword_tooltip`")
+    mo.md("# `subword-tooltip`")
     return (mo,)
 
 
@@ -41,7 +41,7 @@ def _(mo):
     mo.md("""
     Installation:
 
-    `pip install subword_tooltip`
+    `pip install subword-tooltip`
     """)
     return
 
@@ -56,7 +56,7 @@ async def _():
     # If it is a webassembly notebook install the package on the fly
     if is_webassembly_notebook():
         import micropip
-        await micropip.install("subword_tooltip")
+        await micropip.install("subword-tooltip")
     return
 
 
