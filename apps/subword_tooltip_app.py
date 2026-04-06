@@ -5,6 +5,20 @@ app = marimo.App(width="medium")
 
 
 @app.cell
+async def _():
+    # Function to detect automatically if this is a webassembly notebook
+    def is_webassembly_notebook():
+        import sys
+        return sys.platform == 'emscripten'
+
+    # If it is a webassembly notebook install the package on the fly
+    if is_webassembly_notebook():
+        import micropip
+        await micropip.install("subword-tooltip")
+    return
+
+
+@app.cell
 def _():
     import marimo as mo
 
@@ -43,20 +57,6 @@ def _(mo):
 
     `pip install subword-tooltip`
     """)
-    return
-
-
-@app.cell
-async def _():
-    # Function to detect automatically if this is a webassembly notebook
-    def is_webassembly_notebook():
-        import sys
-        return sys.platform == 'emscripten'
-
-    # If it is a webassembly notebook install the package on the fly
-    if is_webassembly_notebook():
-        import micropip
-        await micropip.install("subword-tooltip")
     return
 
 
