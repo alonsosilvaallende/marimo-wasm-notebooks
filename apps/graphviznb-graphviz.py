@@ -1,22 +1,7 @@
 import marimo
 
-__generated_with = "0.21.1"
+__generated_with = "0.22.4"
 app = marimo.App(width="medium")
-
-
-@app.cell
-async def _():
-    # Function to detect automatically if this is a webassembly notebook
-    def is_webassembly_notebook():
-        import sys
-        return sys.platform == 'emscripten'
-
-    # If it is a webassembly notebook install the packages on the fly
-    if is_webassembly_notebook():
-        import micropip
-        await micropip.install("graphviz")
-        await micropip.install("graphviznb")
-    return
 
 
 @app.cell
@@ -62,6 +47,21 @@ def _(graph, graphviznb, mo):
     w = mo.ui.anywidget(graphviznb.Widget())
     w.source = graph.source
     w
+    return
+
+
+@app.cell
+async def _():
+    # Function to detect automatically if this is a webassembly notebook
+    def is_webassembly_notebook():
+        import sys
+        return sys.platform == 'emscripten'
+
+    # If it is a webassembly notebook install the packages on the fly
+    if is_webassembly_notebook():
+        import micropip
+        await micropip.install("graphviz")
+        await micropip.install("graphviznb")
     return
 
 
