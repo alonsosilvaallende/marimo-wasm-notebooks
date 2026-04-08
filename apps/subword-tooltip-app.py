@@ -39,7 +39,7 @@ def _(mo):
     import subword_tooltip
 
     list_of_words = ["This", " is", " an", " impor", "tant", " example"]
-    w = mo.ui.anywidget(subword_tooltip.Widget(list_of_words=list_of_words))
+    w = mo.ui.anywidget(subword_tooltip.Widget(subwords=list_of_words))
     w
     return list_of_words, w
 
