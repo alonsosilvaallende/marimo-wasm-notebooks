@@ -59,7 +59,7 @@ def _(graphviz, textA, textB, textC):
 
 @app.cell
 def _(graph, graphviznb, mo):
-    w = mo.ui.anywidget(graphviznb.Widget())
+    w = graphviznb.Widget()
     w.source = graph.source
     w
     return
