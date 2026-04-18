@@ -45,7 +45,7 @@ jobs:
                 for file in notebooks/*.py; do
                   basename=$(basename "$file" .py)
                   echo "Exporting $file to ${basename}.html..."
-                  uvx marimo export html-wasm "$file" -o "path/to/output/${basename}.html" --mode edit
+                  uvx --from "marimo<0.15.3" marimo export html-wasm "$file" -o "path/to/output/${basename}.html" --mode edit
                   echo "<li><a href='${basename}.html'>${basename}</a></li>" >> path/to/output/index.html
                 done
 
@@ -53,7 +53,7 @@ jobs:
                 for file in apps/*.py; do
                   basename=$(basename "$file" .py)
                   echo "Exporting $file to ${basename}.html..."
-                  uvx marimo export html-wasm "$file" -o "path/to/output/${basename}.html" --mode run
+                  uvx --from "marimo<0.15.3" marimo export html-wasm "$file" -o "path/to/output/${basename}.html" --mode run
                   echo "<li><a href='${basename}.html'>${basename}</a></li>" >> path/to/output/index.html
                 done
                 echo "</ul></body></html>" >> path/to/output/index.html
