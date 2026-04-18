@@ -84,7 +84,7 @@ def _(look_dropdown, mo, theme_dropdown):
 
 @app.cell
 def _(Mermaid, full_text, look_dropdown, theme_dropdown):
-    Mermaid(diagram=f"{full_text}", theme=theme_dropdown.value, look=look_dropdown.value)
+    mo.ui.anywidget(Mermaid(diagram=f"{full_text}", theme=theme_dropdown.value, look=look_dropdown.value))
     return
 
 
