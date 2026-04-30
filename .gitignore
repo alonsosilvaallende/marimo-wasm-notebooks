@@ -2,3 +2,5 @@ apps/__marimo__/
 apps/__pycache__/
 notebooks/__marimo__/
 notebooks/__pycache__/
+requirements-in.txt
+requirements.txt
